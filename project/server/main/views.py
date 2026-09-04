@@ -170,6 +170,10 @@ def create_task_affiliations():
     return jsonify(response_objects), 202
 
 
+@main_blueprint.route("/re3data", methods=["POST"])
+def get_re3data():
+    get_list_re3data_repositories()
+
 @main_blueprint.route("/enrich_dois", methods=["POST"])
 def create_task_enrich_doi():
     args = request.get_json(force=True)
